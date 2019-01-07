@@ -1,21 +1,26 @@
-# Project One: Impossible Game
+# Project One: Final Fantasy
 by Jamal Amar
 
 
 ## How it Works
 	-The game will be shown in a browser.
-	-Player's character is a geometric figure.
-	-Obstacles are "Spikes" or trangles.
-	-Obstacles will appear and the player needs to jump over them.
-	-The score counts how far you get in the obstacle course. 
-	-The Game increases dificulty gradually.
-	-If the player touches an obstacle: "Game Over".
+	-Player and Enemy's characters have their own set of stats and attacks.
+	-Non-stop battle.
+	-Instead of a turn based fight, abilities will recharge over time to make fight more dynamic.
+	-If a character's HP hits 0, Game Over. 
 
 
 ## If Possible
-	-Be able to choose your character (geometric figure).
-	-Have a Reset button.
-	-Have highscore count.
-	-Add sound FX, or soundtrack.
-	-Transform character each time the game gets harder, or changes level(depending how game is done).
-	-Choose dificulty from the beginning.
+	-Have the user create its own fight(each with its own stats and recharge times):
+		-Pick your class.
+		-Pick your weapon.
+		-Choose your enemy in order to change dificulty.
+		
+	-Adventure Mode:
+		-Need to fight a set of different enemies to get to final boss.
+		-Each fight more difficult than last one.
+		-If dungeon is completed you win game.
+		
+	-Loot system to upgrade your stats whenever you kill a boss.
+
+
