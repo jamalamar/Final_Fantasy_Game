@@ -8,7 +8,6 @@ let staff = {one: 25, two: 100, three: 35, ultimate: 2000}
 let weapon = [sword, axe, staff]
 
 
-
 //Character's Class
 class character {
 	constructor (hp, def, heal, weapon) {
@@ -16,16 +15,49 @@ class character {
 		this.def = def
 		this.heal = heal
 		this.weapon = weapon
-	};
+	}
 
-//Attack Function
-	attack() {
+//Attack Functions
+	attackOne() {
+		boss.hp -= this.weapon.one
+	}
 
-	};
+	attackTwo() {
+		boss.hp -= this.weapon.two
+	}
 
+	attackThree() {
+		boss.hp -= this.weapon.three
+	}
+
+	ultimate() {
+		boss.hp -= this.weapon.ultimate
+	}
+};
+
+
+//Enemy
+class enemy {
+	constructor (hp, def) {
+		this.hp = hp
+		this.def = def
+	}
 };
 
 
 //New character
-let mage = new character(150, 200, 50, weapon[0])
+let mage = new character(3000, 35, 50, weapon[0])
 console.log(mage)
+
+//Enemy
+let boss = new enemy (8000, 40)
+console.log(boss)
+
+
+//Console log Batlle
+mage.ultimate()
+mage.attackTwo()
+console.log(boss)
+
+
+
