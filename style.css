@@ -1,0 +1,11 @@
+
+.background {
+	width: 800px;
+	height: 335px;
+	border: 2px solid black;
+	background-image: url("images/forest.gif");
+}
+
+.buttons {
+	margin: 25px 0px 0px 180px;
+}
