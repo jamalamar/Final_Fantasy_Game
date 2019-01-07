@@ -4,8 +4,53 @@
 	height: 335px;
 	border: 2px solid black;
 	background-image: url("images/forest.gif");
+	position: absolute;
+	left: 300px;
+	top: 50px;
+}
+
+
+#boss {
+	width: 450px;
+	height: 200px;
+	background-image: url("images/bossAttack.gif");
+	position: absolute;
+	top: 190px;
+	left: 600px;
+
+}
+
+#character {
+	width: 180px;
+	height: 200px;
+	background-image: url("images/paladinAttack.gif");
+	position: absolute;
+	top: 220px;
+	left: 400px;
+
 }
 
 .buttons {
 	margin: 25px 0px 0px 180px;
+	background-color: silver;
+	position: absolute;
+	left: 250px;
+	top: 380px;
+}
+
+
+#attackOne, #attackTwo, #attackThree {
+	background-color: green;
+	font-size: 20px;
+} 
+
+
+#ultimate {
+	background-color: red;
+	font-size: 20px;
+}
+
+#heal {
+	background-color: blue;
+	font-size: 20px;
 }
