@@ -42,6 +42,7 @@
 #attackOne, #attackTwo, #attackThree {
 	background-color: green;
 	font-size: 20px;
+	border-radius: 2%;
 } 
 
 
