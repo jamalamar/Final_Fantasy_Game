@@ -10,7 +10,7 @@ let weapon = [sword, axe, staff]
 
 //Character's Class
 class character {
-	constructor (hp, def, healing, weapon) {
+	constructor (hp, def, healing, weapon,) {
 		this.hp = hp
 		this.def = def
 		this.healing = healing
@@ -18,20 +18,21 @@ class character {
 	}
 
 //Attack Functions
-	attackOne() {
-		enemy.hp -= this.weapon.one
+	attackOne(target) {
+		target.hp -= this.weapon.one
+
 	}
 
-	attackTwo() {
-		enemy.hp -= this.weapon.two
+	attackTwo(target) {
+		target.hp -= this.weapon.two
 	}
 
-	attackThree() {
-		enemy.hp -= this.weapon.three
+	attackThree(target) {
+		target.hp -= this.weapon.three
 	}
 
-	ultimate() {
-		enemy.hp -= this.weapon.ultimate
+	ultimate(target) {
+		target.hp -= this.weapon.ultimate
 	}
 
 	heal() {
@@ -50,7 +51,7 @@ class enemy {
 	}
 
 	attack() {
-		character.hp -= this.dmg
+		paladin.hp -= this.dmg
 	}
 
 	heal() {
@@ -67,17 +68,29 @@ let warlord = new character(5000, 100, 400, weapon[1])
 
 
 //Enemies
-let bossOne = new enemy (8000, 40, 1000, 500)
+let boss = new enemy (8000, 40, 1000, 500)
 let bossTwo = new enemy (12000, 40, 2000, 650)
 let bossThree = new enemy (20000, 40, 3000, 800)
 
 
-//Console log Batlle
-paladin.ultimate()
-paladin.attackOne()
-paladin.heal()
 
-console.log(paladin)
-console.log(bossOne)
+//Functions for buttons
+//---------------------------------------------------------------------
+//Used an annonymus function to call another function because..
+//..the attack functions are bound to the Button and return and object.
+$('#attack-one').click(function() {paladin.attackOne(boss)});
+$('#attack-two').click(function() {paladin.attackTwo(boss)});
+$('#attack-three').click(function() {paladin.attackThree(boss)});
+$('#ultimate').click(function() {paladin.ultimate(boss)});
+$('#heal').click(function() {paladin.ultimate(boss)});
+
+
+
+
+
+//Console log Batlle
+
+
+
 
 
