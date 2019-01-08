@@ -1,8 +1,8 @@
 
 //Weapons
-let sword = {one: 150, two: 250, three: 500, ultimate: 2000}
-let axe = {one: 200, two: 300, three: 600, ultimate: 2500}
-let staff = {one: 100, two: 200, three: 350, ultimate: 1200}
+let sword = {one: 50, two: 250, three: 500, ultimate: 2000}
+let axe = {one: 75, two: 300, three: 600, ultimate: 2500}
+let staff = {one: 35, two: 200, three: 350, ultimate: 1200}
 
 //Array with weapons to choose
 let weapon = [sword, axe, staff]
@@ -76,21 +76,21 @@ let bossThree = new enemy (20000, 40, 3000, 800)
 
 //Functions for buttons
 //---------------------------------------------------------------------
-//Used an annonymus function to call another function because..
-//..the attack functions are bound to the Button and return and object.
-$('#attack-one').click(function() {paladin.attackOne(boss)});
-$('#attack-two').click(function() {paladin.attackTwo(boss)});
-$('#attack-three').click(function() {paladin.attackThree(boss)});
-$('#ultimate').click(function() {paladin.ultimate(boss)}) 
-$('#heal').click(function() {paladin.ultimate(boss)});
-
-//Function to activate Ultimate animation
-$('#ultimate').click(function() {
-	$('#enemy').toggleClass("enemy-attack")	 //toggles attack on
-	setTimeout(function() {$('#enemy').toggleClass("enemy-attack")}, 6000) //toggles attack off after 4sec.
-});
+	//Used an annonymus function to call another function because..
+	//..the attack functions are bound to the Button and return and object.
+	$('#attack-one').click(function() {paladin.attackOne(boss)});
+	$('#attack-two').click(function() {paladin.attackTwo(boss)});
+	$('#attack-three').click(function() {paladin.attackThree(boss)});
+	$('#ultimate').click(function() {paladin.ultimate(boss)}) 
+	$('#heal').click(function() {paladin.ultimate(boss)});
 
 
+	//Function to activate Ultimate animation
+	$('#ultimate').click(function() {
+		$('#character').toggleClass("character-attack")	 							 //toggles attack on
+		setTimeout(function() {$('#character').toggleClass("character-attack")}, 2000) //toggles attack off after 6sec.
+	});
+//-----------------------------------------------------------------------
 
 
 //Console log Batlle
