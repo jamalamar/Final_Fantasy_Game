@@ -88,10 +88,15 @@ let bossThree = new enemy (20000, 40, 3000, 800)
 	//Function to activate Ultimate animation
 	$('#ultimate').click(function() {
 		$('#character').toggleClass("character-attack")	 							 //toggles attack on
-		setTimeout(function() {$('#character').toggleClass("character-attack")}, 2000) //toggles attack off after 6sec.
+		setTimeout(function() {$('#character').toggleClass("character-attack")}, 1400) //toggles attack off after 6sec.
 	});
 //-----------------------------------------------------------------------
+	
 
+	$('#heal').click(function() {
+		$('#enemy').toggleClass("enemy-attack")	 							 
+		setTimeout(function() {$('#enemy').toggleClass("enemy-attack")}, 6000) 
+	});
 
 //Console log Batlle
 
