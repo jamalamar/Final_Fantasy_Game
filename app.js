@@ -50,8 +50,8 @@ class enemy {
 		this.dmg = dmg
 	}
 
-	attack() {
-		paladin.hp -= this.dmg
+	attack(target) {
+		target.hp -= this.dmg
 	}
 
 	heal() {
