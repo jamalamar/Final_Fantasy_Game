@@ -73,11 +73,11 @@ let bossThree = new enemy (20000, 40, 3000, 800)
 
 
 //Console log Batlle
-mage.ultimate()
-mage.attackOne()
-mage.heal()
+paladin.ultimate()
+paladin.attackOne()
+paladin.heal()
 
-console.log(mage)
+console.log(paladin)
 console.log(bossOne)
 
 
