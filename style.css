@@ -9,7 +9,6 @@ body {
 	position: absolute;
 	/*background-image: url("images/finalLogo.png");*/
 	left: 50px;
-
 }
 
 
@@ -25,10 +24,15 @@ body {
 	width: 800px;
 	height: 335px;
 	border: 2px solid white;
-	background-image: url("images/tree.gif");
 	position: absolute;
 	left: 310px;
 	top: 120px;
+}
+.screen-background-waterfall {
+	background-image: url("images/waterfall.gif");
+}
+.screen-background-tree {
+	background-image:  url("images/tree.gif");
 }
 
 #enemy {
@@ -44,6 +48,8 @@ body {
 .enemy-attack {
 	background-image: url("images/bossAttack.gif");
 }
+
+
 
 
 .character-standby {
@@ -64,6 +70,8 @@ body {
 }
 
 
+
+
 .buttons {
 	margin: 25px 0px 0px 200px;
 	position: absolute;
@@ -81,7 +89,17 @@ body {
 }
 
 
-.battleground-titles {
+
+
+.thumbnails {
+	display: flex;
+	align-content: column;
+	width: 400px;
+	position: absolute;
+	top: 580px;
+	left: 500px;
+}
+.thumbnail-titles {
 	display: flex;
 	align-content: column;
 	width: 400px;
@@ -92,24 +110,13 @@ body {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 30px;
 }
-#waterfall {
+#title-waterfall {
 	position: absolute;
 	left: 40px;
-
 }
-#tree {
+#title-tree {
 	position: absolute;
 	left: 265px;
-}
-
-
-.battleground {
-	display: flex;
-	align-content: column;
-	width: 400px;
-	position: absolute;
-	top: 580px;
-	left: 500px;
 }
 
 

@@ -90,13 +90,27 @@ let bossThree = new enemy (20000, 40, 3000, 800)
 		$('#character').toggleClass("character-attack")	 							 //toggles attack on
 		setTimeout(function() {$('#character').toggleClass("character-attack")}, 1400) //toggles attack off after 6sec.
 	});
-//-----------------------------------------------------------------------
-	
 
+	//Heal button Demo for Boss Ultimate
 	$('#heal').click(function() {
 		$('#enemy').toggleClass("enemy-attack")	 							 
 		setTimeout(function() {$('#enemy').toggleClass("enemy-attack")}, 6000) 
 	});
+//-----------------------------------------------------------------------
+
+
+//Function to choose Battleground
+	$('#thumbnail-waterfall').click(function () {
+		$('.screen').toggleClass("screen-background-waterfall")
+		$('.screen').toggleClass("screen-background-tree")
+	});
+	
+	$('#thumbnail-tree').click(function () {
+		$('.screen').toggleClass("screen-background-tree")
+		$('.screen').toggleClass("screen-background-waterfall")
+	});
+
+
 
 //Console log Batlle
 
