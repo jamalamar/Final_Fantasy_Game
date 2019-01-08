@@ -86,10 +86,8 @@ $('#heal').click(function() {paladin.ultimate(boss)});
 
 //Function to activate Ultimate animation
 $('#ultimate').click(function() {
-	$('#enemy').toggleClass("enemy-standby") //toggles standby off
 	$('#enemy').toggleClass("enemy-attack")	 //toggles attack on
-	setTimeout(function() {$('#enemy').toggleClass("enemy-standby")}, 4000) //toggles syandby on after 4sec.
-	setTimeout(function() {$('#enemy').toggleClass("enemy-attack")}, 4000) //toggles attack off after 4sec.
+	setTimeout(function() {$('#enemy').toggleClass("enemy-attack")}, 6000) //toggles attack off after 4sec.
 });
 
 
