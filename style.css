@@ -172,5 +172,13 @@ body {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 100px;
 }
+#you-won{
+	position: absolute;
+	left: 400px;
+	top: 140px;
+	color: transparent;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 150px;
+}
 
 

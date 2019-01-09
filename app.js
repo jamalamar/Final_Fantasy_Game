@@ -100,6 +100,12 @@ setInterval(function() {
 	}
 }, 100);
 
+//You Won
+setInterval(function() {
+	if(boss.hp<=0){
+		$('#you-won').css('color', 'green')
+	}
+}, 100);
 
 
 
