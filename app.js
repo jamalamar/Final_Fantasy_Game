@@ -55,7 +55,7 @@ class enemy {
 	}
 
 	heal() {
-		if(this.hp<9000 && Math.random()<=0.6){
+		if(this.hp<9000 && Math.random()<=0.5){
 		this.hp += this.healing
 		}
 	}
@@ -77,13 +77,18 @@ let bossThree = new enemy (20000, 40, 3000, 800)
 
 
 
-// //Enemy combat
- setInterval(function(){boss.heal()}, 3000);
- setInterval(function(){boss.attack(paladin)}, 3000);
-
+// //ENEMY COMBAT
+//----------------------------------------------------
+ setInterval(function(){boss.heal()}, 4000);
+ setInterval(function(){
+ 	boss.attack(paladin)
+ 	$('#enemy-damage').html("-" + boss.dmg)
+ }, 4000);
+//----------------------------------------------------
 
 
 //HP Updates
+//----------------------------------------------------
 setInterval(function() {
 $('#character-hp').html(paladin.hp)
 }, 100)
@@ -91,9 +96,16 @@ setInterval(function() {
 $('#enemy-hp').html(boss.hp)
 }, 100)
 
+//Damage Updates
+//----------------------------------------------------
+setInterval(function() {
+$('#paladin-damage').html("-")
+}, 100)
+
 
 
 //Game Over
+//----------------------------------------------------
 setInterval(function() {
 	if(paladin.hp<=0){
 		$('#gameover').css('color', 'red')
@@ -101,6 +113,7 @@ setInterval(function() {
 }, 100);
 
 //You Won
+//----------------------------------------------------
 setInterval(function() {
 	if(boss.hp<=0){
 		$('#you-won').css('color', 'green')
@@ -111,83 +124,93 @@ setInterval(function() {
 
 
 
-//Functions for combat buttons
-//---------------------------------------------------------------------
-	//Used an annonymus function to call another function because..
-	//..the attack functions are bound to the Button and return and object.
+											//Functions for combat buttons
+//--------------------------------------------------------------------------------------------------------
+							//Used an annonymus function to call another function because..
+						//..the attack functions are bound to the Button and return and object.
 
-	$('#attack-one').click(function() {paladin.attackOne(boss)}); //Click function to attack.
-		$('#attack-one').click(function(){			
-    	let button = $(this)
-    	button.attr('disabled', 'disabled')
-    	setTimeout(function() {
-         button.removeAttr('disabled');
-  		}, 1000)//Set time in milliseconds to disable button.
-  	});
-	
-	
-	$('#attack-two').click(function() {paladin.attackTwo(boss)});//Click function to attack.
-		$('#attack-two').click(function(){			
-    	let button = $(this)
-    	button.attr('disabled', 'disabled')
-    	setTimeout(function() {
-         button.removeAttr('disabled');
-  		}, 2000)//Set time in milliseconds to disable button.
-  	});
 
+//Function to disable Button
+							
+let x = function(timeDisabled){						
+    	let button = $(this)
+    	button.attr('disabled', 'disabled')			//this part disables the button.
+
+    	setTimeout(function() {             		//This part enables the button after set amout of time.
+         button.removeAttr('disabled');
+  		}, timeDisabled.data) 						//timeDisabled = millisecons to enable button again.
+    };
+
+
+//Quick Attack Functions
+//----------------------------------------------------------------------------------------------------------
+	
+	$('#attack-one').click(function() {paladin.attackOne(boss)});	//Click function to attack.
+	$('#attack-one').click(1000, x); 								//Click function to disable button.
+
+
+// {whatever : 5600}
+//Light Attack Functions
+//----------------------------------------------------------------------------------------------------------	
+	
+	$('#attack-two').click(function() {paladin.attackTwo(boss)});	//Click function to attack.
+	$('#attack-two').click(2000, x);								//Click function to disable button.
+	
+
+//Heavy Attack Functions
+//----------------------------------------------------------------------------------------------------------
+	
 	$('#attack-three').click(function() {paladin.attackThree(boss)});//Click function to attack.
-		$('#attack-three').click(function(){			
-    	let button = $(this)
-    	button.attr('disabled', 'disabled')
-    	setTimeout(function() {
-         button.removeAttr('disabled');
-  		}, 3000)//Set time in milliseconds to disable button.
-  	});
+	$('#attack-three').click(3000, x);									 //Click function to disable button.
+	
 
-	$('#ultimate').click(function() {paladin.ultimate(boss)});//Click function to attack.
-		$('#ultimate').click(function(){			
-    	let button = $(this)
-    	button.attr('disabled', 'disabled')
-    	setTimeout(function() {
-         button.removeAttr('disabled');
-  		}, 5000)// Set time in milliseconds to disable button.
-  	});
+//Ultimate Attack Functions
+//----------------------------------------------------------------------------------------------------------
+	
+	$('#ultimate').click(function() {paladin.ultimate(boss)});		//Click function to attack.
+	$('#ultimate').click(10000, x);									//Click function to disable button.
 
 	//Function to activate Ultimate animation
-	$('#ultimate').click(function() {
-		$('#character').toggleClass("character-attack")	 //toggles attack on
-		setTimeout(function() {$('#character').toggleClass("character-attack")}, 1400) //toggles attack off after 6sec.
-	});
+	$('#ultimate').click(function() {								
+		$('#character').toggleClass("character-attack")				//Toggles animation on.
+
+		setTimeout(function() {
+		$('#character').toggleClass("character-attack")
+		}, 1400) 													//Toggles animation off after 1.4sec																			
+	});																					
 	
 
-	$('#heal').click(function() {paladin.heal()});
-		$('#heal').click(function(){			
-    	let button = $(this)
-    	button.attr('disabled', 'disabled')
-    	setTimeout(function() {
-         button.removeAttr('disabled');
-  		}, 3000)// Set time in milliseconds to disable button.
-  	});
+//Heal Button Functions
+//----------------------------------------------------------------------------------------------------------
+
+	$('#heal').click(function() {paladin.heal()});					//Click function to heal.
+	$('#heal').click(8000, x);										//Click function to disable button.
 
 	//Heal button Demo for Boss Ultimate
 	$('#heal').click(function() {
-		$('#enemy').toggleClass("enemy-attack")	 							 
-		setTimeout(function() {$('#enemy').toggleClass("enemy-attack")}, 6000) 
+		$('#enemy').toggleClass("enemy-attack")						//Toggles animation on.
+
+		setTimeout(function() {
+		$('#enemy').toggleClass("enemy-attack")
+		}, 6000) 													//Toggles animation off after 6sec.
 	});
+	
+
 
 
 
 
 //Thumbnails to choose Battleground
-	$('#thumbnail-waterfall').click(function () {
-		$('.screen').toggleClass("screen-background-waterfall")
-		$('.screen').toggleClass("screen-background-tree")
-	});
+//----------------------------------------------------------------------------------------------------------
+$('#thumbnail-waterfall').click(function () {
+	$('.screen').toggleClass("screen-background-waterfall")
+	$('.screen').toggleClass("screen-background-tree")
+});
 	
-	$('#thumbnail-tree').click(function () {
-		$('.screen').toggleClass("screen-background-tree")
-		$('.screen').toggleClass("screen-background-waterfall")
-	});
+$('#thumbnail-tree').click(function () {
+	$('.screen').toggleClass("screen-background-tree")
+	$('.screen').toggleClass("screen-background-waterfall")
+});
 
 
 

@@ -149,21 +149,41 @@ body {
 }
 #character-hp{
 	position: absolute;
-	left: 120px;
+	left: 95px;
 	top: 240px;
 	color: red;
 	font-family: 'ZCOOL KuaiLe', cursive;
-	font-size: 30px;
+	font-size: 50px;
 
 }
 #enemy-hp{
 	position: absolute;
-	left: 1220px;
+	left: 1200px;
 	top: 240px;
 	color: red;
 	font-family: 'ZCOOL KuaiLe', cursive;
-	font-size: 30px;
+	font-size: 50px;
 }
+#character-damage{
+	position: absolute;
+	left: 1250px;
+	top: 300px;
+	color: red;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 20px;
+}
+#enemy-damage{
+	position: absolute;
+	left: 125px;
+	top: 300px;
+	color: red;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 20px;
+
+}
+
+
+
 #gameover{
 	position: absolute;
 	left: 460px;
