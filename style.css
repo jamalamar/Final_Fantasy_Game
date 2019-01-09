@@ -112,12 +112,57 @@ body {
 }
 #title-waterfall {
 	position: absolute;
-	left: 40px;
+	left: 35px;
 }
 #title-tree {
 	position: absolute;
 	left: 265px;
 }
+#thumbnail-waterfall {
+	border-style: none;
+	background-color: black;
+}
+#thumbnail-tree {
+	border-style: none;
+	background-color: black;
+}
 
+
+
+
+#character-name{
+	position: absolute;
+	left: 120px;
+	top: 200px;
+	color: white;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 30px;
+
+}
+#enemy-name{
+	position: absolute;
+	left: 1200px;
+	top: 200px;
+	color: white;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 30px;
+}
+#character-hp{
+	position: absolute;
+	left: 120px;
+	top: 240px;
+	color: red;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 30px;
+
+}
+#enemy-hp{
+	position: absolute;
+	left: 1220px;
+	top: 240px;
+	color: red;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 30px;
+}
 
 
