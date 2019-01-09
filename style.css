@@ -1,6 +1,7 @@
 
 body {
 	background-color: black;
+	background-image: url("images/darkBackground.jpg");
 }
 
 #back-logo {
@@ -11,13 +12,30 @@ body {
 	left: 50px;
 }
 
-
 .title {
 	text-align: center;
 	color: white;
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 90px;
 }
+
+
+.title-start {
+	position: relative;
+	top: 150px;
+	text-align: center;
+	color: white;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 110px;
+}
+#start-button {
+	position: relative;
+	top: 300px;
+	left: 570px;
+	font-size: 100px;
+	color: red;
+	font-family: 'ZCOOL KuaiLe', cursive;
+} 
 
 
 .screen {

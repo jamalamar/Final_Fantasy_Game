@@ -77,30 +77,34 @@ let bossThree = new enemy (20000, 40, 3000, 800)
 
 
 
-// //ENEMY COMBAT
-//----------------------------------------------------
- setInterval(function(){boss.heal()}, 4000);
- setInterval(function(){
- 	boss.attack(paladin)
- 	$('#enemy-damage').html("-" + boss.dmg)
- }, 4000);
-//----------------------------------------------------
+let start = function() {
+
+		// //ENEMY COMBAT
+		//----------------------------------------------------
+		 setInterval(function(){boss.heal()}, 4000);
+		 setInterval(function(){
+		 	boss.attack(paladin)
+		 	$('#enemy-damage').html("-" + boss.dmg)
+		 }, 4000);
+		//----------------------------------------------------
 
 
-//HP Updates
-//----------------------------------------------------
-setInterval(function() {
-$('#character-hp').html(paladin.hp)
-}, 100)
-setInterval(function() {
-$('#enemy-hp').html(boss.hp)
-}, 100)
+		//HP Updates
+		//----------------------------------------------------
+		setInterval(function() {
+		$('#character-hp').html(paladin.hp)
+		}, 100)
+		setInterval(function() {
+		$('#enemy-hp').html(boss.hp)
+		}, 100)
 
-//Damage Updates
-//----------------------------------------------------
-setInterval(function() {
-$('#paladin-damage').html("-")
-}, 100)
+		//Damage Updates
+		//----------------------------------------------------
+		setInterval(function() {
+		$('#paladin-damage').html("-")
+		}, 100)
+
+};
 
 
 
@@ -132,8 +136,8 @@ setInterval(function() {
 
 //Function to disable Button
 							
-let x = function(timeDisabled){						
-    	let button = $(this)
+let x = function(timeDisabled){										
+    	let button = $(this)						
     	button.attr('disabled', 'disabled')			//this part disables the button.
 
     	setTimeout(function() {             		//This part enables the button after set amout of time.
@@ -198,8 +202,6 @@ let x = function(timeDisabled){
 
 
 
-
-
 //Thumbnails to choose Battleground
 //----------------------------------------------------------------------------------------------------------
 $('#thumbnail-waterfall').click(function () {
@@ -211,6 +213,24 @@ $('#thumbnail-tree').click(function () {
 	$('.screen').toggleClass("screen-background-tree")
 	$('.screen').toggleClass("screen-background-waterfall")
 });
+
+
+
+//Button to start game
+
+$('#start-button').click(start())
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
