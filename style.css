@@ -164,5 +164,13 @@ body {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 30px;
 }
+#gameover{
+	position: absolute;
+	left: 460px;
+	top: 200px;
+	color: transparent;
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 100px;
+}
 
 

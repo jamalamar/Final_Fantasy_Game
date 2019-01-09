@@ -55,8 +55,9 @@ class enemy {
 	}
 
 	heal() {
-		if(this.hp<10000 && Math.random()<=0.6)
+		if(this.hp<10000 && Math.random()<=0.6){
 		this.hp += this.healing
+		}
 	}
 };
 
@@ -89,6 +90,18 @@ $('#character-hp').html(paladin.hp)
 setInterval(function() {
 $('#enemy-hp').html(boss.hp)
 }, 100)
+
+
+
+//Game Over
+setInterval(function() {
+	if(paladin.hp<=0){
+		$('#gameover').css('color', 'red')
+	}
+}, 100);
+
+
+
 
 
 
