@@ -310,7 +310,15 @@ body {
 	height: 200px;
 	background-image: url("animations/healGreen.gif");
 	opacity: 0.8;
-
+}
+#enemy-attack-animation {
+	visibility: ;
+	position: absolute;
+	top: 142px;
+	left: 368px;
+	width: 288px;
+	height: 324px;
+	background-image: url("animations/explosionAttack.gif");
 }
 
 #gameover{
