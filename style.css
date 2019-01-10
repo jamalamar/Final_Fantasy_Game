@@ -145,19 +145,31 @@ body {
 
 
 .buttons {
-	margin: 25px 0px 0px 200px;
 	position: absolute;
-	left: 250px;
-	top: 450px;
+	left: 570px;
+	top: 470px;
 }
-#attack-one, #attack-two, #attack-three {
+#attack-one, #attack-two, #attack-three, #ultimate, #heal {
+	width: 50px;
+	height: 50px;
 	font-size: 15px;
 } 
+
+
+#attack-one {
+	background-image: url("icons/attack-one/beam-sky-1.png");
+}
+#attack-two {
+	background-image: url("icons/attack-two/ice-blue-1.png");
+}
+#attack-three {
+	background-image: url("icons/attack-three/lighting-royal-1.png");
+}
 #ultimate {
-	font-size: 15px;
+	background-image: url("icons/ultimate/enchant-red-1.png");
 }
 #heal {
-	font-size: 15px;
+	background-image: url("icons/heal/heal-jade-1.png");
 }
 
 

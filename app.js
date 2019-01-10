@@ -116,6 +116,10 @@ setInterval(function() {
 	}
 }, 100);
 
+if(paladin<=0){
+	start = null
+}
+
 //You Won
 //----------------------------------------------------
 setInterval(function() {
