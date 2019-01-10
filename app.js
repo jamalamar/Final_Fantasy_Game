@@ -149,15 +149,27 @@ let x = function(timeDisabled){
   		}, timeDisabled.data) 						//timeDisabled = millisecons to enable button again.
     };
 
+let y = function(timeDisabled){										
+    	let button = $(this)						
+    	button.css('visibility', '')			//this part disables the button.
+
+    	setTimeout(function() {             		//This part enables the button after set amout of time.
+         button.css('disabled');
+  		}, timeDisabled.data) 						//timeDisabled = millisecons to enable button again.
+    };
+
+
+
 
 //Quick Attack Functions
 //----------------------------------------------------------------------------------------------------------
 	
 	$('#attack-one').click(function() {paladin.attackOne(boss)});	//Click function to attack.
 	$('#attack-one').click(1000, x); 								//Click function to disable button.
+	$('#attack-one').click(1000, y);
 
 
-// {whatever : 5600}
+
 //Light Attack Functions
 //----------------------------------------------------------------------------------------------------------	
 	
