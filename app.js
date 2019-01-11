@@ -1,6 +1,6 @@
 
 //Weapons
-let sword = {one: 50, two: 250, three: 500, ultimate: 2000}
+let sword = {one: 100, two: 250, three: 500, ultimate: 2000}
 let axe = {one: 75, two: 300, three: 600, ultimate: 2500}
 let staff = {one: 35, two: 200, three: 350, ultimate: 1200}
 
@@ -77,15 +77,31 @@ let bossThree = new enemy (20000, 40, 3000, 800)
 
 
 
+
 let start = function() {
 
 		// //ENEMY COMBAT
 		//----------------------------------------------------
-		 setInterval(function(){boss.heal()}, 4000);
+		 setInterval(function(){
+		 	boss.heal()
+		 	$('#character-damage').html("+" + boss.healing)		//logs heal.
+		 	$('#character-damage').css('color', 'green')		//changes color to green.
+		 }, 8000);
 		 setInterval(function(){
 		 	boss.attack(paladin)
-		 	$('#enemy-damage').html("-" + boss.dmg)
-		 }, 4000);
+		 	$('#enemy-damage').html("-" + boss.dmg)				//logs damage.
+		 	$('#enemy-damage').css('color', 'red')				//changes color to red.
+
+		 }, 7200);
+
+		 setInterval(function(){										
+	    	let animation = $('#enemy-attack-animation')						
+	    	animation.css('visibility', 'visible')				//this part enables the animation.
+
+	    	setTimeout(function() {             				
+	         animation.css('visibility', 'hidden');
+	  		}, 900) 											//timeDisabled = millisecons to enable animation again.
+	    }, 7200);
 		//----------------------------------------------------
 
 
@@ -98,14 +114,32 @@ let start = function() {
 		$('#enemy-hp').html(boss.hp)
 		}, 100)
 
-		//Damage Updates
-		//----------------------------------------------------
-		setInterval(function() {
-		$('#paladin-damage').html("-")
-		}, 100)
 
-};
+};		
+		
 
+//Damage/Heal Updates
+//----------------------------------------------------
+$('#attack-one').click(function () {
+	$('#character-damage').html("-"+sword.one) 		//logs damage done.
+	$('#character-damage').css('color', 'red')		//logs heal and changes color to red.
+});
+$('#attack-two').click(function () {
+	$('#character-damage').html("-"+sword.two)
+	$('#character-damage').css('color', 'red')
+});
+$('#attack-three').click(function () {
+	$('#character-damage').html("-"+sword.three)
+	$('#character-damage').css('color', 'red')
+});
+$('#ultimate').click(function () {
+	$('#character-damage').html("-"+sword.ultimate)
+	$('#character-damage').css('color', 'red')
+});
+$('#heal').click(function () {
+	$('#enemy-damage').html("+"+paladin.healing)
+	$('#enemy-damage').css('color', 'green')
+});
 
 
 //Game Over
@@ -149,24 +183,58 @@ let x = function(timeDisabled){
   		}, timeDisabled.data) 						//timeDisabled = millisecons to enable button again.
     };
 
-let y = function(timeDisabled){										
-    	let button = $(this)						
-    	button.css('visibility', '')			//this part disables the button.
+let one = function(timeDisabled){										
+    	let animation = $('#attack-one-animation')						
+    	animation.css('visibility', 'visible')				//this part disables the animation.
 
-    	setTimeout(function() {             		//This part enables the button after set amout of time.
-         button.css('disabled');
-  		}, timeDisabled.data) 						//timeDisabled = millisecons to enable button again.
+    	setTimeout(function() {             				//This part enables the animation after set amout of time.
+         animation.css('visibility', 'hidden');
+  		}, timeDisabled.data) 								//timeDisabled = millisecons to enable animation again.
     };
 
 
+let two = function(timeDisabled){										
+    	let animation = $('#attack-two-animation')						
+    	animation.css('visibility', 'visible')				//this part disables the animation.
 
+    	setTimeout(function() {             				//This part enables the animation after set amout of time.
+         animation.css('visibility', 'hidden');
+  		}, timeDisabled.data) 								//timeDisabled = millisecons to enable animation again.
+    };
+
+let three = function(timeDisabled){										
+    	let animation = $('#attack-three-animation')						
+    	animation.css('visibility', 'visible')				//this part disables the animation.
+
+    	setTimeout(function() {             				//This part enables the animation after set amout of time.
+         animation.css('visibility', 'hidden');
+  		}, timeDisabled.data) 								//timeDisabled = millisecons to enable animation again.
+    };
+
+let ultim = function(timeDisabled){										
+    	let animation = $('#ultimate-animation')						
+    	animation.css('visibility', 'visible')				//this part disables the animation.
+
+    	setTimeout(function() {             				//This part enables the animation after set amout of time.
+         animation.css('visibility', 'hidden');
+  		}, timeDisabled.data) 								//timeDisabled = millisecons to enable animation again.
+    };
+
+let hea = function(timeDisabled){										
+    	let animation = $('#heal-animation')						
+    	animation.css('visibility', 'visible')				//this part disables the animation.
+
+    	setTimeout(function() {             				//This part enables the animation after set amout of time.
+         animation.css('visibility', 'hidden');
+  		}, timeDisabled.data) 								//timeDisabled = millisecons to enable animation again.
+    };
 
 //Quick Attack Functions
 //----------------------------------------------------------------------------------------------------------
 	
 	$('#attack-one').click(function() {paladin.attackOne(boss)});	//Click function to attack.
-	$('#attack-one').click(1000, x); 								//Click function to disable button.
-	$('#attack-one').click(1000, y);
+	$('#attack-one').click(1000, x);								//Click function to disable button.
+	$('#attack-one').click(1000, one); 																
 
 
 
@@ -174,39 +242,50 @@ let y = function(timeDisabled){
 //----------------------------------------------------------------------------------------------------------	
 	
 	$('#attack-two').click(function() {paladin.attackTwo(boss)});	//Click function to attack.
-	$('#attack-two').click(2000, x);								//Click function to disable button.
-	
+	$('#attack-two').click(4000, x);								//Click function to disable button.
+	$('#attack-two').click(1000, two)
+
 
 //Heavy Attack Functions
 //----------------------------------------------------------------------------------------------------------
 	
 	$('#attack-three').click(function() {paladin.attackThree(boss)});//Click function to attack.
-	$('#attack-three').click(3000, x);									 //Click function to disable button.
+	$('#attack-three').click(6000, x);								//Click function to disable button.
+	$('#attack-three').click(5000, three);
 	
 
 //Ultimate Attack Functions
 //----------------------------------------------------------------------------------------------------------
 	
 	$('#ultimate').click(function() {paladin.ultimate(boss)});		//Click function to attack.
-	$('#ultimate').click(10000, x);									//Click function to disable button.
+	$('#ultimate').click(15000, x);									//Click function to disable button.
+	$('#ultimate').click(2000, ultim);
 
-	//Function to activate Ultimate animation
+
+//Heal Button Functions
+//----------------------------------------------------------------------------------------------------------
+
+	$('#heal').click(function() {paladin.heal()});					//Click function to heal.
+	$('#heal').click(12000, x);										//Click function to disable button.
+	$('#heal').click(2000, hea);										
+
+
+
+
+
+
+//Function to activate Ultimate animation
+//----------------------------------------------------------------------------------------------------------
 	$('#ultimate').click(function() {								
 		$('#character').toggleClass("character-attack")				//Toggles animation on.
 
 		setTimeout(function() {
 		$('#character').toggleClass("character-attack")
 		}, 1400) 													//Toggles animation off after 1.4sec																			
-	});																					
-	
+	});	
 
-//Heal Button Functions
+//Heal button Demo for Boss Ultimate
 //----------------------------------------------------------------------------------------------------------
-
-	$('#heal').click(function() {paladin.heal()});					//Click function to heal.
-	$('#heal').click(8000, x);										//Click function to disable button.
-
-	//Heal button Demo for Boss Ultimate
 	$('#heal').click(function() {
 		$('#enemy').toggleClass("enemy-attack")						//Toggles animation on.
 
@@ -214,7 +293,8 @@ let y = function(timeDisabled){
 		$('#enemy').toggleClass("enemy-attack")
 		}, 6000) 													//Toggles animation off after 6sec.
 	});
-	
+
+
 
 
 
@@ -223,12 +303,15 @@ let y = function(timeDisabled){
 $('#thumbnail-waterfall').click(function () {
 	$('.screen').toggleClass("screen-background-waterfall")
 	$('.screen').toggleClass("screen-background-tree")
+	
+
 });
 	
 $('#thumbnail-tree').click(function () {
 	$('.screen').toggleClass("screen-background-tree")
 	$('.screen').toggleClass("screen-background-waterfall")
 });
+
 
 
 
