@@ -157,19 +157,19 @@ body {
 
 
 #attack-one {
-	background-image: url("icons/attack-one/beam-sky-1.png");
+	background-image: url("icons/attack-one/beam-sky-3.png");
 }
 #attack-two {
-	background-image: url("icons/attack-two/ice-blue-1.png");
+	background-image: url("icons/attack-two/ice-blue-3.png");
 }
 #attack-three {
-	background-image: url("icons/attack-three/lighting-royal-1.png");
+	background-image: url("icons/attack-three/lighting-royal-3.png");
 }
 #ultimate {
-	background-image: url("icons/ultimate/enchant-red-1.png");
+	background-image: url("icons/ultimate/enchant-red-3.png");
 }
 #heal {
-	background-image: url("icons/heal/heal-jade-1.png");
+	background-image: url("icons/heal/heal-jade-3.png");
 }
 
 
