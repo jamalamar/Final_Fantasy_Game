@@ -85,12 +85,14 @@ let start = function() {
 		 setInterval(function(){
 		 	boss.heal()
 		 	$('#character-damage').html("+" + boss.healing)		//logs heal.
-		 	$('#character-damage').css('color', 'green')		//changes color to green.
+		 	$('#character-damage').css('color', 'green')
+		 	$('#character-damage').css('animation', 'effect6 2s forwards')		//changes color to green.
 		 }, 8000);
 		 setInterval(function(){
 		 	boss.attack(paladin)
 		 	$('#enemy-damage').html("-" + boss.dmg)				//logs damage.
-		 	$('#enemy-damage').css('color', 'red')				//changes color to red.
+		 	$('#enemy-damage').css('color', 'red')
+		 	$('#enemy-damage').css('animation', 'effect7 2s forwards')				//changes color to red.
 
 		 }, 7200);
 
@@ -123,22 +125,27 @@ let start = function() {
 $('#attack-one').click(function () {
 	$('#character-damage').html("-"+sword.one) 		//logs damage done.
 	$('#character-damage').css('color', 'red')		//logs heal and changes color to red.
+	$('#character-damage').css('animation', 'effect1 2s forwards')		
 });
 $('#attack-two').click(function () {
 	$('#character-damage').html("-"+sword.two)
 	$('#character-damage').css('color', 'red')
+	$('#character-damage').css('animation', 'effect2 2s forwards')
 });
 $('#attack-three').click(function () {
 	$('#character-damage').html("-"+sword.three)
 	$('#character-damage').css('color', 'red')
+	$('#character-damage').css('animation', 'effect3 2s forwards')
 });
 $('#ultimate').click(function () {
 	$('#character-damage').html("-"+sword.ultimate)
-	$('#character-damage').css('color', 'red')
+	$('#character-damage').css('color', 'yellow')
+	$('#character-damage').css('animation', 'effect4 2s forwards')
 });
 $('#heal').click(function () {
 	$('#enemy-damage').html("+"+paladin.healing)
 	$('#enemy-damage').css('color', 'green')
+	$('#enemy-damage').css('animation', 'effect5 2s forwards')
 });
 
 
@@ -267,10 +274,7 @@ let hea = function(timeDisabled){
 
 	$('#heal').click(function() {paladin.heal()});					//Click function to heal.
 	$('#heal').click(12000, x);										//Click function to disable button.
-	$('#heal').click(2000, hea);										
-
-
-
+	$('#heal').click(2000, hea);
 
 
 

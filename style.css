@@ -248,6 +248,77 @@ body {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 50px;
 }
+
+@keyframes effect1 {
+  0% {
+  	transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+  	transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes effect2 {
+  0% {
+  	transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+  	transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes effect3 {
+  0% {
+  	transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+  	transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes effect4 {
+  0% {
+  	transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+  	transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes effect5 {
+  0% {
+  	transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+  	transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes effect6 {
+  0% {
+  	transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+  	transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes effect7 {
+  0% {
+  	transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+  	transform: scale(0.5);
+    opacity: 0;
+  }
+}
 #character-damage{
 	position: absolute;
 	left: 1250px;
@@ -266,7 +337,7 @@ body {
 
 }
 #attack-one-animation {
-	visibility: hidden;
+	visibility: ;
 	position: absolute;
 	top: 192px;
 	left: 760px;
@@ -321,6 +392,7 @@ body {
 	background-image: url("animations/explosionAttack.gif");
 }
 
+
 #gameover{
 	position: absolute;
 	left: 460px;
@@ -337,5 +409,9 @@ body {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 150px;
 }
-
-
+#audio {
+	visibility: hidden;
+}
+#battle-audio {
+	visibility: hidden;
+}
